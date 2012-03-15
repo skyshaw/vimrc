@@ -1,0 +1,1 @@
+/home/skyshaw/.vim/bundle/lua_omni/ftplugin/lua_omni.lua

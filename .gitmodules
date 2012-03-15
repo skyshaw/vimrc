@@ -1,0 +1,21 @@
+[submodule "bundle/lua-support"]
+	path = bundle/lua-support
+	url = https://github.com/vim-scripts/lua-support.git
+[submodule "bundle/lua_omni"]
+	path = bundle/lua_omni
+	url = https://github.com/vim-scripts/lua_omni.git
+[submodule "bundle/Pydiction"]
+	path = bundle/Pydiction
+	url = https://github.com/vim-scripts/Pydiction
+[submodule "bundle/NERDTree"]
+	path = bundle/NERDTree
+	url = https://github.com/vim-scripts/The-NERD-tree.git
+[submodule "bundle/vimwiki"]
+	path = bundle/vimwiki
+	url = https://github.com/vim-scripts/vimwiki
+[submodule "bundle/clang-complete"]
+	path = bundle/clang-complete
+	url = https://github.com/vim-scripts/clang-complete.git
+[submodule "bundle/PySmell"]
+	path = bundle/PySmell
+	url = https://github.com/vim-scripts/PySmell.git

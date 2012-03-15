@@ -1,3 +1,6 @@
+call pathogen#runtime_append_all_bundles()
+call pathogen#helptags()
+
 "Variable Setting
 if(has("win32") || has("win95") || has("win64") || has("win16"))
     let g:iswindows=1
@@ -65,12 +68,11 @@ imap <F4> <C-X><C-O>
 "pydiction
 "pydiction 1.2 python auto complete  
 filetype plugin on  
-let g:pydiction_location = '~/.vim/tools/pydiction/complete-dict'  
+let g:pydiction_location = '~/.vim/bundle/Pydiction/complete-dict'
 "defalut g:pydiction_menu_height == 15  
 let g:pydiction_menu_height = 20 
 
 
-call pathogen#infect()
 
 "===========================================================================
 "Mappings Begin
