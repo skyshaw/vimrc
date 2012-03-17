@@ -223,7 +223,8 @@ let g:clang_periodic_quickfix = 1
 """"""""""""""""""""""""""""""""""""""
 autocmd FileType python set omnifunc=pysmell#Complete
 "log: 用了pathogen, 之后pysmell失效了，看了一下报错，
-"pysmell#Complete似乎无法加载自己插件里python的包
+"pysmell#Complete似乎无法加载自己插件里python的包(不是这个原因)
+"原因找到了,github上的版本更加新，原来模块中缺少很多函数
 """"""""""""""""""""""""""""""""""""""
 " END -- pysmell.
 """"""""""""""""""""""""""""""""""""""
