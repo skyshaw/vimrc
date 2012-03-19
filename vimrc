@@ -103,6 +103,7 @@ augroup c_cpp_config
     autocmd FileType c,cpp inoremap () ()<left>
     autocmd FileType cpp   nnoremap <buffer> <localleader>c I//
     autocmd FileType c,cpp noremap  <F7> <ESC>:call g:hguard()<CR>
+    autocmd FileType c,cpp noremap  <F9> <ESc>:call g:dotClang()<CR>
 augroup End
 
 augroup js_config
@@ -149,6 +150,7 @@ inoremap <c-d> <Esc>lxi
 
 "===========================================================================
 "Plugins Begin
+
 
 """"""""""""""""""""""""""""""""""""""
 " Indent Python in the Google way.
