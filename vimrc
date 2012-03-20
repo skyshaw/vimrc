@@ -96,9 +96,11 @@ noremap <F12> :QFix<cr>
 "augroup每次执行的时候会合并里面的命令，所以用autocmd!来清楚之前的命令
 augroup c_cpp_config
     autocmd! 
-    autocmd FileType c,cpp inoremap { {}<ESC>i<CR><ESC>O
-    autocmd FileType c,cpp inoremap {} {}<ESC>i<CR><ESC>O
+    "autocmd FileType c,cpp inoremap { {}<ESC>i<CR><ESC>O
+    "autocmd FileType c,cpp inoremap {} {}<ESC>i<CR><ESC>O
     autocmd FileType c,cpp inoremap cm /*  */<ESC>hhi
+    autocmd FileType c,cpp inoremap { {}<left>
+    autocmd FileType c,cpp inoremap {} {}<left>
     autocmd FileType c,cpp inoremap ( ()<left>
     autocmd FileType c,cpp inoremap () ()<left>
     autocmd FileType cpp   nnoremap <buffer> <localleader>c I//
