@@ -11,7 +11,7 @@ function g:hguard()
     let s:_header_ifn = "#ifndef " . s:guard 
     let s:_header_def = '#define ' . s:guard
     let s:_footer  = "#endif"
-    call append(0, s:_header_ifn)
     call append(0, s:_header_def)
+    call append(0, s:_header_ifn)
     call append(line('$'), s:_footer)
 endfunction 
