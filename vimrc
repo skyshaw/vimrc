@@ -107,7 +107,7 @@ augroup End
 
 augroup js_config
     autocmd FileType javascript nnoremap <buffer> <localleader>c I//
-    autocmd FileType javascript set sw=2 sts=2 ts=8
+    autocmd FileType javascript setlocal sw=2 sts=2 ts=8
 augroup End
 
 augroup py_config
