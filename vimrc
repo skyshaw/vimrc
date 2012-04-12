@@ -121,7 +121,9 @@ augroup End
 
 nnoremap <leader>ev :vsplit $MYVIMRC<cr>
 nnoremap <leader>sv :source $MYVIMRC<cr>
-inoremap jj <esc>
+
+"repalce casLock as Esc
+"inoremap jj <esc>
 "inoremap <left> <nop>
 "inoremap <right> <nop>
 "inoremap <up> <nop>
