@@ -43,3 +43,12 @@
 [submodule "bundle/cscope_win"]
 	path = bundle/cscope_win
 	url = https://github.com/vim-scripts/cscope_win.git
+[submodule "bundle/minibufexpl"]
+	path = bundle/minibufexpl
+	url = https://github.com/vim-scripts/minibufexpl.vim.git
+[submodule "bundle/FuzzyFinder"]
+	path = bundle/FuzzyFinder
+	url = https://github.com/vim-scripts/FuzzyFinder.git
+[submodule "bundle/L9"]
+	path = bundle/L9
+	url = https://github.com/vim-scripts/L9.git
