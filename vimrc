@@ -133,6 +133,7 @@ nnoremap <right> <nop>
 nnoremap <up> <nop>
 nnoremap <down> <nop>
 
+nnoremap <C-n> :call NumberToggle()<cr>
 
 onoremap in@ :<c-u>normal! /[^ \t]\+@[^ \t]\+\.[^ \t]\+<cr>vf<space>
 
