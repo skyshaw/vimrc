@@ -223,6 +223,7 @@ let g:pydiction_menu_height = 20
 let g:clang_complete_copen = 1 "出错的时候打开quickfix
 let g:clang_complete_auto = 1
 let g:clang_periodic_quickfix = 1
+noremap <F8> <ESC>:call g:ClangUpdateQuickFix()<CR>
 "let g:clang_use_library = 1
 """"""""""""""""""""""""""""""""""""""
 " END --clang
