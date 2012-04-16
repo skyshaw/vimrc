@@ -90,7 +90,7 @@ augroup END
 "quickfix toggle
 noremap <F12> :QFix<cr>
 
-"augroup每次执行的时候会合并里面的命令，所以用autocmd!来清楚之前的命令
+"augroup每次执行的时候会合并里面的命令，所以用autocmd!来清除之前的命令
 augroup c_cpp_config
     autocmd! 
     "autocmd FileType c,cpp inoremap { {}<ESC>i<CR><ESC>O
@@ -103,6 +103,8 @@ augroup c_cpp_config
     autocmd FileType cpp   nnoremap <buffer> <localleader>c I//
     autocmd FileType c,cpp noremap  <F7> <ESC>:call g:hguard()<CR>
     autocmd FileType c,cpp noremap  <F9> <ESc>:call g:dotClang()<CR>
+    autocmd FileType c setlocal makeprg=gcc\ %
+    autocmd FileType cpp setlocal makeprg=g++\ %
 augroup End
 
 augroup js_config
@@ -133,6 +135,7 @@ nnoremap <right> <nop>
 nnoremap <up> <nop>
 nnoremap <down> <nop>
 
+nnoremap <C-n> :call NumberToggle()<cr>
 
 onoremap in@ :<c-u>normal! /[^ \t]\+@[^ \t]\+\.[^ \t]\+<cr>vf<space>
 
@@ -220,6 +223,7 @@ let g:pydiction_menu_height = 20
 let g:clang_complete_copen = 1 "出错的时候打开quickfix
 let g:clang_complete_auto = 1
 let g:clang_periodic_quickfix = 1
+noremap <F8> <ESC>:call g:ClangUpdateQuickFix()<CR>
 "let g:clang_use_library = 1
 """"""""""""""""""""""""""""""""""""""
 " END --clang
@@ -309,6 +313,15 @@ let Tlist_Exit_OnlyWindow=1  "如果taglist窗口是最后一个窗口，则退�
 let Tlist_Use_Right_Window=1  "在右侧窗口中显示taglist窗口
 """"""""""""""""""""""""""""""""""""""
 " END -- Taglist
+""""""""""""""""""""""""""""""""""""""
+
+""""""""""""""""""""""""""""""""""""""
+" FuzzyFinder 
+""""""""""""""""""""""""""""""""""""""
+noremap 'b :FufBuffer<CR>
+noremap 'f :FufFile<CR>
+""""""""""""""""""""""""""""""""""""""
+" END -- FuzzyFinder
 """"""""""""""""""""""""""""""""""""""
 
 "Plugins End
