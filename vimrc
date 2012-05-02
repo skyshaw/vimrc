@@ -49,10 +49,18 @@ set smartindent
 set autoindent 
 set cursorline "突出显示当前行
 set ai!
+set scrolloff=3 " keep 3 lines when scrolling
+set showcmd " display incomplete commands
 set nocp
 set ruler "打开状态栏标尺
+
 set incsearch "输入搜索内容时就显示搜索结果
 "set hlsearch "搜索时高亮显示被找到的文本
+set showmatch "jump to matchs when entering regexp
+set ignorecase " ignore case when searching
+set smartcase  " no ignorecase if Uppercase char present
+
+set backspace=indent,eol,start  " make that backspace key work the way it should
 set cmdheight=1 "设置命令行的行数为1
 set laststatus=2 "显示状态栏(默认值为1，无法显示)
 set statusline=\ %<%F[%1*%M%*%n%R%H]%=\ %y\ %0(%{&fileformat}\ %{&encoding}\ %c:%l/%L%)\ 
