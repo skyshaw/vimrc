@@ -52,3 +52,6 @@
 [submodule "bundle/nerd_commenter"]
 	path = bundle/nerd_commenter
 	url = https://github.com/vim-scripts/The-NERD-Commenter.git
+[submodule "bundle/vim-flake8"]
+	path = bundle/vim-flake8
+	url = https://github.com/nvie/vim-flake8.git
