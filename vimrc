@@ -150,10 +150,6 @@ onoremap in@ :<c-u>normal! /[^ \t]\+@[^ \t]\+\.[^ \t]\+<cr>vf<space>
 
 map <F6> <ESC>:VimwikiAll2HTML<CR>
 imap <F4> <C-X><C-O>
-nmap <C-Z>  <ESC>:undo<CR>
-imap <C-Z>  <ESC>:undo<CR>
-vmap <C-C>  "+y
-imap <C-V>  <ESC>p
 
 "Emacs Style 
 inoremap <c-d> <Esc>lxi
