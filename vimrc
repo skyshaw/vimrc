@@ -119,6 +119,7 @@ augroup End
 augroup js_config
     autocmd FileType javascript nnoremap <buffer> <localleader>c I//
     autocmd FileType javascript setlocal sw=2 sts=2 ts=8
+    autocmd FileType javascript noremap <F7> <ESC>:JSLintUpdate<CR>
 augroup End
 
 augroup py_config
@@ -146,10 +147,10 @@ nnoremap <down> <nop>
 
 nnoremap <C-n> :call NumberToggle()<cr>
 
-onoremap in@ :<c-u>normal! /[^ \t]\+@[^ \t]\+\.[^ \t]\+<cr>vf<space>
+"onoremap in@ :<c-u>normal! /[^ \t]\+@[^ \t]\+\.[^ \t]\+<cr>vf<space>
 
-map <F6> <ESC>:VimwikiAll2HTML<CR>
-imap <F4> <C-X><C-O>
+noremap <F6> <ESC>:VimwikiAll2HTML<CR>
+"inoremap <F4> <C-X><C-O>
 
 "Emacs Style 
 inoremap <c-d> <Esc>lxi
