@@ -58,3 +58,6 @@
 [submodule "bundle/markdown-syntax"]
 	path = bundle/markdown-syntax
 	url = https://github.com/vim-scripts/Markdown.git
+[submodule "bundle/jslint"]
+	path = bundle/jslint
+	url = https://github.com/hallettj/jslint.vim.git
