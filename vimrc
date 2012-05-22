@@ -128,6 +128,7 @@ augroup End
 
 augroup lua_config        
     autocmd FileType lua        nnoremap <buffer> <localleader>c I--
+    autocmd FileType lua        setlocal sw=2 sts=2 ts=2
 augroup End
 
 
