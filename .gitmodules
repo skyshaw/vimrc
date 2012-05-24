@@ -64,3 +64,6 @@
 [submodule "bundle/luainspect"]
 	path = bundle/luainspect
 	url = https://github.com/vim-scripts/luainspect.vim.git
+[submodule "bundle/quickfix_exit"]
+	path = bundle/quickfix_exit
+	url = https://github.com/now/vim-quit-if-only-quickfix-buffer-left.git
