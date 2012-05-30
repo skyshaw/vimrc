@@ -53,6 +53,7 @@ set scrolloff=3 " keep 3 lines when scrolling
 set showcmd " display incomplete commands
 set nocp
 set ruler "打开状态栏标尺
+set history=1000
 
 set incsearch "输入搜索内容时就显示搜索结果
 "set hlsearch "搜索时高亮显示被找到的文本
@@ -128,6 +129,7 @@ augroup End
 
 augroup lua_config        
     autocmd FileType lua        nnoremap <buffer> <localleader>c I--
+    autocmd FileType lua        setlocal sw=2 sts=2 ts=2
 augroup End
 
 
@@ -268,7 +270,7 @@ let g:vimwiki_list = [{'path': '$HOME/Documents/docs/wiki',
 " NERDTree 
 """"""""""""""""""""""""""""""""""""""
 noremap <F2> :NERDTreeToggle<cr>
-
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
 """"""""""""""""""""""""""""""""""""""
 " END -- NERDTree
 """"""""""""""""""""""""""""""""""""""
@@ -340,4 +342,3 @@ let g:lua_inspect_warnings=0 "不即时提示错误
 
 "Plugins End
 "===========================================================================
-

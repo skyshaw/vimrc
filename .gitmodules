@@ -67,3 +67,6 @@
 [submodule "bundle/colors-solarized"]
 	path = bundle/colors-solarized
 	url = https://github.com/altercation/vim-colors-solarized.git
+[submodule "bundle/quickfix_exit"]
+	path = bundle/quickfix_exit
+	url = https://github.com/now/vim-quit-if-only-quickfix-buffer-left.git
