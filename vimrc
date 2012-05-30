@@ -104,7 +104,7 @@ augroup c_cpp_config
     autocmd! 
     "autocmd FileType c,cpp inoremap { {}<ESC>i<CR><ESC>O
     "autocmd FileType c,cpp inoremap {} {}<ESC>i<CR><ESC>O
-    autocmd FileType c,cpp inoremap cm /*  */<ESC>hhi
+    "autocmd FileType c,cpp inoremap cm /*  */<ESC>hhi
     autocmd FileType c,cpp inoremap { {}<left>
     autocmd FileType c,cpp inoremap {} {}<left>
     autocmd FileType c,cpp inoremap ( ()<left>
