@@ -269,7 +269,7 @@ let g:vimwiki_list = [{'path': '$HOME/Documents/docs/wiki',
 " NERDTree 
 """"""""""""""""""""""""""""""""""""""
 noremap <F2> :NERDTreeToggle<cr>
-
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
 """"""""""""""""""""""""""""""""""""""
 " END -- NERDTree
 """"""""""""""""""""""""""""""""""""""
