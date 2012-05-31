@@ -154,8 +154,12 @@ nnoremap <C-n> :call NumberToggle()<cr>
 noremap <F6> <ESC>:VimwikiAll2HTML<CR>
 "inoremap <F4> <C-X><C-O>
 
-"Emacs Style 
-inoremap <c-d> <Esc>lxi
+"vim-latex与<c-j>的冲突
+nnoremap <SID>I_won’t_ever_type_this <Plug>IMAP_JumpForward
+noremap <c-j> <c-w>j
+noremap <c-k> <c-w>k
+noremap <c-l> <c-w>l
+noremap <c-h> <c-w>h
 
 "Mappings End
 "===========================================================================
