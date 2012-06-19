@@ -1,0 +1,3 @@
+-std=c++0x
+ -fcxx-exceptions
+-I/home/skyshaw/Documents/code/folly

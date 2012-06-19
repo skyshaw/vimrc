@@ -111,7 +111,7 @@ augroup c_cpp_config
     autocmd FileType c,cpp inoremap ( ()<left>
     autocmd FileType c,cpp inoremap () ()<left>
     autocmd FileType cpp   nnoremap <buffer> <localleader>c I//
-    autocmd FileType c,cpp noremap  <F7> <ESC>:call g:hguard()<CR>
+    autocmd FileType c,cpp noremap  <F8> <ESC>:call g:hguard()<CR>
     autocmd FileType c,cpp noremap  <F9> <ESc>:call g:dotClang()<CR>
     autocmd FileType c setlocal makeprg=gcc\ %
     autocmd FileType cpp setlocal makeprg=g++\ %
@@ -235,7 +235,8 @@ let g:pydiction_menu_height = 20
 let g:clang_complete_copen = 1 "出错的时候打开quickfix
 let g:clang_complete_auto = 1
 let g:clang_periodic_quickfix = 1
-noremap <F8> <ESC>:call g:ClangUpdateQuickFix()<CR>
+let g:clang_complete_macros = 1
+noremap <F7> <ESC>:call g:ClangUpdateQuickFix()<CR>
 "let g:clang_use_library = 1
 """"""""""""""""""""""""""""""""""""""
 " END --clang

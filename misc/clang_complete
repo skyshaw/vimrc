@@ -1,8 +1,2 @@
--I/usr/include
--I/usr/include/c++/4.5.2
--I/usr/include/c++/4.5
--I/usr/include/c++/4.5/i486-linux-gnu
--I/usr/include/c++/4.5/i686-linux-gnu
--I/usr/src/linux-headers-2.6.38-13/arch/x86/include
 -I/usr/include/lua5.1
--I/home/skyshaw/Documents/lib/boost/include/
+-std=c++0x
