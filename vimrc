@@ -23,6 +23,7 @@ let g:miniBufExplMapCTabSwitchBufs=1
 let g:miniBufExplMapWindowsNavVim=1 
 let g:miniBufExplMapWindowNavArrows=1 
 
+set rtp+=$GOROOT/misc/vim 
 
 "Variable Setting End
 "===========================================================================
@@ -343,6 +344,16 @@ noremap 'f :FufFile<CR>
 let g:lua_inspect_warnings=0 "不即时提示错误
 """"""""""""""""""""""""""""""""""""""
 " END -- LuaInspect
+""""""""""""""""""""""""""""""""""""""
+
+""""""""""""""""""""""""""""""""""""""
+" Golang
+""""""""""""""""""""""""""""""""""""""
+"echo rtp
+"filetype plugin indent on
+"syntax on
+""""""""""""""""""""""""""""""""""""""
+" END -- Golang
 """"""""""""""""""""""""""""""""""""""
 
 "Plugins End
