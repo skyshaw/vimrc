@@ -24,6 +24,7 @@ let g:miniBufExplMapWindowsNavVim=1
 let g:miniBufExplMapWindowNavArrows=1 
 
 set rtp+=$GOROOT/misc/vim 
+set rtp+=~/Documents/bin/golib/src/github.com/nsf/gocode/vim
 
 "Variable Setting End
 "===========================================================================

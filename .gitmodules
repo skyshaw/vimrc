@@ -67,3 +67,6 @@
 [submodule "bundle/quickfix_exit"]
 	path = bundle/quickfix_exit
 	url = https://github.com/now/vim-quit-if-only-quickfix-buffer-left.git
+[submodule "bundle/vim-powerline"]
+	path = bundle/vim-powerline
+	url = https://github.com/Lokaltog/vim-powerline.git
