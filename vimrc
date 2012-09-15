@@ -34,7 +34,8 @@ set rtp+=~/Documents/bin/golib/src/github.com/nsf/gocode/vim
 "Basic Setting Begin
 
 set nocompatible "不启用vi兼容模式
-colorscheme evening "配色方案
+set t_Co=256
+colorscheme desert256 "配色方案
 syntax enable 
 syntax on "自动语法高亮
 set nu "设置显示行号
