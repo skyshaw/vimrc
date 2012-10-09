@@ -20,3 +20,14 @@ function! QFixToggle()
     endfor
     copen
 endfunction
+
+
+command -bang -nargs=? DClang call DisableClang()
+function! DisableClang()
+    let g:clang_complete_copen=0
+endfunction
+
+command -bang -nargs=? EClang call EnableClang()
+function! EnableClang()
+    let g:clang_complete_copen=1
+endfunction

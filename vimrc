@@ -4,25 +4,6 @@ call pathogen#helptags()
 "===========================================================================
 "Variable Setting Begin
 
-if(has("win32") || has("win95") || has("win64") || has("win16"))
-    let g:iswindows=1
-else
-    let g:iswindows=0
-endif
-
-
-if has("win32")
-    let $VIMFILES = $VIM.'/vimfiles'
-else
-    let $VIMFILES = $HOME.'/.vim'
-endif
-
-
-
-let g:miniBufExplMapCTabSwitchBufs=1 
-let g:miniBufExplMapWindowsNavVim=1 
-let g:miniBufExplMapWindowNavArrows=1 
-
 set rtp+=$GOROOT/misc/vim 
 set rtp+=~/Documents/bin/golib/src/github.com/nsf/gocode/vim
 
@@ -32,51 +13,50 @@ set rtp+=~/Documents/bin/golib/src/github.com/nsf/gocode/vim
 
 "===========================================================================
 "Basic Setting Begin
-
-set nocompatible "不启用vi兼容模式
-set t_Co=256
-colorscheme desert256 "配色方案
-syntax enable 
-syntax on "自动语法高亮
-set nu "设置显示行号
+set nocompatible                " (cp) use Vim defaults (much better) 不启用vi兼容模式
+set t_Co=256                    "
+set number                      " (nu) show line numbers设置显示行号
 set tags=tags;
-set autochdir "自动切换到当前目录为当前文件所在目录
+set autochdir                   " (acd) 自动切换到当前目录为当前文件所在目录
 set wrap 
 set filetype=c
-set tabstop=4 "设置tab长度为4
-set softtabstop=4 "设置退格键时移动宽度为4
-set shiftwidth=4 "设置<<和>>命令移动时宽度为4
-set expandtab "用空格替换tab
+set tabstop=4                   " (ts) width (in spaces) that a <tab> is displayed as
+set softtabstop=4               " (sts) 设置退格键时移动宽度为4
+set shiftwidth=4                " (sw) width (in spaces) used in each step of autoindent (aswell as << and >>)
+set expandtab                   " (et) 用空格替换tab
 set cindent
 set smartindent
-set autoindent 
-set cursorline "突出显示当前行
-set ai!
-set scrolloff=3 " keep 3 lines when scrolling
-set showcmd " display incomplete commands
-set nocp
-set ruler "打开状态栏标尺
-set history=1000
+set autoindent                  " (ai) turn on auto-indenting (great for programers)
+"set ai!                        " (ai) turn on/off auto-indenting
+set cursorline                  " (cul) 突出显示当前行
+set scrolloff=3                 " (so) keep 3 lines when scrolling
+set sidescroll=5                " (ss) the minimal number of columns to scroll horizontally
+set showcmd                     " (sc) display incomplete commands
+set ruler                       " (ru) show the cursor position at all times 打开状态栏标尺
+set history=1000                " (hi) keep 50 lines of command history
+set linebreak                   " (lbr) wrap long lines at a space instead of in the middle of a word
+set incsearch                   " (is) highlights what you are searching for as you type
+"set hlsearch                   " (hls) 搜索时高亮显示被找到的文本
+set showmatch                   " (sm) briefly jump to matching bracket when inserting one, jump to matchs when entering regexp
+set ignorecase                  " (ic) ignores case in search patterns
+set smartcase                   " (scs) don't ignore case when the search pattern has uppercase
+set backspace=indent,eol,start  " (bs) allows backspacing beyond starting point of insert mode, indents and line breaks
+set cmdheight=1                 " (ch) 设置命令行的行数为1
+set laststatus=2                " (ls) 显示状态栏(默认值为1，无法显示)
 
-set incsearch "输入搜索内容时就显示搜索结果
-"set hlsearch "搜索时高亮显示被找到的文本
-set showmatch "jump to matchs when entering regexp
-set ignorecase " ignore case when searching
-set smartcase  " no ignorecase if Uppercase char present
-
-set backspace=indent,eol,start  " make that backspace key work the way it should
-set cmdheight=1 "设置命令行的行数为1
-set laststatus=2 "显示状态栏(默认值为1，无法显示)
+set fileencodings=utf-8,gb2312,gb18030,gbk,ucs-bom,cp936,latin1
 set statusline=\ %<%F[%1*%M%*%n%R%H]%=\ %y\ %0(%{&fileformat}\ %{&encoding}\ %c:%l/%L%)\ 
 "set guioptions-=T 
 "set guioptions-=m 
 "set guioptions-=r 
 
-"encoding
-set fileencodings=utf-8,gb2312,gb18030,gbk,ucs-bom,cp936,latin1
 
 "Syntax Fold
 "set foldmethod=indent
+
+colorscheme desert256           " 配色方案
+syntax enable 
+syntax on                       " 自动语法高亮
 
 filetype plugin on
 filetype indent on
