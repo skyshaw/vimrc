@@ -13,9 +13,6 @@
 [submodule "bundle/vimwiki"]
 	path = bundle/vimwiki
 	url = https://github.com/vim-scripts/vimwiki
-[submodule "bundle/clang-complete"]
-	path = bundle/clang-complete
-	url = https://github.com/vim-scripts/clang-complete.git
 [submodule "bundle/PySmell"]
 	path = bundle/PySmell
 	url = https://github.com/vim-scripts/PySmell.git
