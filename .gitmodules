@@ -13,9 +13,6 @@
 [submodule "bundle/vimwiki"]
 	path = bundle/vimwiki
 	url = https://github.com/vim-scripts/vimwiki
-[submodule "bundle/PySmell"]
-	path = bundle/PySmell
-	url = https://github.com/vim-scripts/PySmell.git
 [submodule "bundle/easymotion"]
 	path = bundle/easymotion
 	url = https://github.com/Lokaltog/vim-easymotion.git
