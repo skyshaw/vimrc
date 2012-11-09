@@ -5,7 +5,7 @@ call pathogen#helptags()
 "Variable Setting Begin
 
 set rtp+=$GOROOT/misc/vim 
-set rtp+=~/Documents/bin/golib/src/github.com/nsf/gocode/vim
+set rtp+=$GOROOT/src/pkg/github.com/nsf/gocode/vim
 
 "Variable Setting End
 "===========================================================================
