@@ -19,7 +19,6 @@ set number                      " (nu) show line numbers设置显示行号
 set tags=tags;
 set autochdir                   " (acd) 自动切换到当前目录为当前文件所在目录
 set wrap 
-set filetype=c
 set tabstop=4                   " (ts) width (in spaces) that a <tab> is displayed as
 set softtabstop=4               " (sts) 设置退格键时移动宽度为4
 set shiftwidth=4                " (sw) width (in spaces) used in each step of autoindent (aswell as << and >>)
@@ -43,21 +42,18 @@ set smartcase                   " (scs) don't ignore case when the search patter
 set backspace=indent,eol,start  " (bs) allows backspacing beyond starting point of insert mode, indents and line breaks
 set cmdheight=1                 " (ch) 设置命令行的行数为1
 set laststatus=2                " (ls) 显示状态栏(默认值为1，无法显示)
-
-set fileencodings=utf-8,gb2312,gb18030,gbk,ucs-bom,cp936,latin1
-set statusline=\ %<%F[%1*%M%*%n%R%H]%=\ %y\ %0(%{&fileformat}\ %{&encoding}\ %c:%l/%L%)\ 
 "set guioptions-=T 
 "set guioptions-=m 
 "set guioptions-=r 
-
-
-"Syntax Fold
 "set foldmethod=indent
+set fileencodings=utf-8,gb2312,gb18030,gbk,ucs-bom,cp936,latin1
+set statusline=\ %<%F[%1*%M%*%n%R%H]%=\ %y\ %0(%{&fileformat}\ %{&encoding}\ %c:%l/%L%)\ 
+
+
 
 colorscheme desert256           " 配色方案
 syntax enable 
 syntax on                       " 自动语法高亮
-
 filetype plugin on
 filetype indent on
 
@@ -68,8 +64,8 @@ filetype indent on
 "对vim脚本折叠， {{{ ... }}}
 "Vimscript file settings ---------------------- {{{
 augroup filetype_vim
-    au!
-    au FileType vim setlocal foldmethod=marker
+    autocmd!
+    autocmd FileType vim setlocal foldmethod=marker
 augroup END
 "}}}
 
@@ -77,7 +73,7 @@ augroup END
 
 
 "===========================================================================
-"Mappings Begin
+"Mappings Begin (Not Specific to Plugins)
 
 "quickfix toggle
 "noremap <F12> :QFix<cr>
@@ -95,7 +91,6 @@ augroup c_cpp_config
     autocmd FileType c,cpp inoremap () ()<left>
     autocmd FileType cpp   nnoremap <buffer> <localleader>c I//
     autocmd FileType c,cpp noremap  <F8> <ESC>:call g:hguard()<CR>
-    autocmd FileType c,cpp noremap  <F9> <ESc>:call g:dotClang()<CR>
     autocmd FileType c setlocal makeprg=gcc\ %
     autocmd FileType cpp setlocal makeprg=g++\ %
 augroup End
@@ -134,7 +129,6 @@ nnoremap <C-n> :call NumberToggle()<cr>
 
 "onoremap in@ :<c-u>normal! /[^ \t]\+@[^ \t]\+\.[^ \t]\+<cr>vf<space>
 
-noremap <F6> <ESC>:VimwikiAll2HTML<CR>
 "inoremap <F4> <C-X><C-O>
 
 "vim-latex与<c-j>的冲突
@@ -215,12 +209,15 @@ let g:pydiction_menu_height = 20
 """"""""""""""""""""""""""""""""""""""
 "clang auto complete  
 """"""""""""""""""""""""""""""""""""""
-let g:clang_complete_copen = 1 "出错的时候打开quickfix
-let g:clang_complete_auto = 1
-let g:clang_periodic_quickfix = 1
-let g:clang_complete_macros = 1
-noremap <F7> <ESC>:call g:ClangUpdateQuickFix()<CR>
-"let g:clang_use_library = 1
+augroup c_cpp_config
+    let g:clang_complete_copen = 1 "出错的时候打开quickfix
+    let g:clang_complete_auto = 1
+    let g:clang_periodic_quickfix = 1
+    let g:clang_complete_macros = 1
+    "let g:clang_use_library = 1
+    autocmd FileType c,cpp noremap <buffer> <F7> <ESC>:call g:ClangUpdateQuickFix()<CR>
+    autocmd FileType c,cpp noremap <buffer> <F9> <ESc>:call g:dotClang()<CR>
+augroup END
 """"""""""""""""""""""""""""""""""""""
 " END --clang
 """"""""""""""""""""""""""""""""""""""
@@ -241,13 +238,15 @@ autocmd FileType python set omnifunc=pysmell#Complete
 """"""""""""""""""""""""""""""""""""""
 " vimwiki
 """"""""""""""""""""""""""""""""""""""
-let g:vimwiki_list = [{'path': '$HOME/Documents/docs/wiki',  
-    \ 'path_html': '$HOME/Documents/docs/wiki/',
-    \ 'template_path': '$HOME/Documents/docs/wiki/wiki_template/',
-    \ 'template_default': 'def_template',
-    \ 'template_ext': '.tpl',
-    \ 'diary_link_count': 5}]
-
+augroup vimwiki_config
+    autocmd FileType vimwiki noremap <buffer> <F6> <ESC>:VimwikiAll2HTML<CR>
+    let g:vimwiki_list = [{'path': '$HOME/Documents/docs/wiki',  
+                \ 'path_html': '$HOME/Documents/docs/wiki/',
+                \ 'template_path': '$HOME/Documents/docs/wiki/wiki_template/',
+                \ 'template_default': 'def_template',
+                \ 'template_ext': '.tpl',
+                \ 'diary_link_count': 5}]
+augroup END
 """"""""""""""""""""""""""""""""""""""
 " END --  vimwiki
 """"""""""""""""""""""""""""""""""""""
