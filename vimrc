@@ -2,17 +2,17 @@ call pathogen#runtime_append_all_bundles()
 call pathogen#helptags()
 
 "===========================================================================
-"Variable Setting Begin
+" Variable Setting Begin
 
 set rtp+=$GOROOT/misc/vim 
 set rtp+=$GOROOT/src/pkg/github.com/nsf/gocode/vim
 
-"Variable Setting End
+" Variable Setting End
 "===========================================================================
 
 
 "===========================================================================
-"Basic Setting Begin
+" Basic Setting Begin
 set nocompatible                " (cp) use Vim defaults (much better) 不启用vi兼容模式
 set t_Co=256                    "
 set number                      " (nu) show line numbers设置显示行号
@@ -57,19 +57,8 @@ syntax on                       " 自动语法高亮
 filetype plugin on
 filetype indent on
 
-"Basic Setting End
+" Basic Setting End
 "===========================================================================
-
-
-"对vim脚本折叠， {{{ ... }}}
-"Vimscript file settings ---------------------- {{{
-augroup filetype_vim
-    autocmd!
-    autocmd FileType vim setlocal foldmethod=marker
-augroup END
-"}}}
-
-
 
 
 "===========================================================================
