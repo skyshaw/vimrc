@@ -69,7 +69,7 @@ filetype indent on
 noremap <c-q> :QFix<cr>
 
 "augroup每次执行的时候会合并里面的命令，所以用autocmd!来清除之前的命令
-augroup c_cpp_config
+augroup C_Cpp_Config
     autocmd! 
     "autocmd FileType c,cpp inoremap { {}<ESC>i<CR><ESC>O
     "autocmd FileType c,cpp inoremap {} {}<ESC>i<CR><ESC>O
@@ -84,17 +84,17 @@ augroup c_cpp_config
     autocmd FileType cpp setlocal makeprg=g++\ %
 augroup End
 
-augroup js_config
+augroup Js_Config
     autocmd FileType javascript nnoremap <buffer> <localleader>c I//
     autocmd FileType javascript setlocal sw=2 sts=2 ts=8
     autocmd FileType javascript noremap <F7> <ESC>:JSLintUpdate<CR>
 augroup End
 
-augroup py_config
+augroup Py_Config
     autocmd FileType python     nnoremap <buffer> <localleader>c I#
 augroup End
 
-augroup lua_config        
+augroup Lua_Config        
     autocmd FileType lua        nnoremap <buffer> <localleader>c I--
     autocmd FileType lua        setlocal sw=2 sts=2 ts=2
 augroup End
@@ -135,9 +135,8 @@ noremap <c-h> <c-w>h
 "Plugins Begin
 
 
-""""""""""""""""""""""""""""""""""""""
+"===========================================================================
 " Indent Python in the Google way.
-""""""""""""""""""""""""""""""""""""""
 
 autocmd FileType python setlocal indentexpr=GetGooglePythonIndent(v:lnum)
 autocmd FileType python let pyindent_nested_paren="&sw*2"
@@ -179,55 +178,57 @@ autocmd FileType python let pyindent_open_paren="&sw*2"
 "let pyindent_nested_paren="&sw*2"
 "let pyindent_open_paren="&sw*2"
 
-""""""""""""""""""""""""""""""""""""""
-" END -- Indent Python in the Google way.
-""""""""""""""""""""""""""""""""""""""
+
+" Indent Python in the Google way.
+"===========================================================================
 
 
-""""""""""""""""""""""""""""""""""""""
-"pydiction 1.2 python auto complete  
-""""""""""""""""""""""""""""""""""""""
+"===========================================================================
+" pydiction 1.2 python auto complete  
+
 filetype plugin on  
 let g:pydiction_location = '~/.vim/bundle/Pydiction/complete-dict'
 "defalut g:pydiction_menu_height == 15  
 let g:pydiction_menu_height = 20 
-""""""""""""""""""""""""""""""""""""""
-" END --pydiction 
-""""""""""""""""""""""""""""""""""""""
 
-""""""""""""""""""""""""""""""""""""""
+" pydiction 1.2 python auto complete  
+"===========================================================================
+
+"===========================================================================
 "clang auto complete  
-""""""""""""""""""""""""""""""""""""""
-augroup c_cpp_config
+
+augroup C_Cpp_Config
     let g:clang_complete_copen = 1 "出错的时候打开quickfix
     let g:clang_complete_auto = 1
     let g:clang_periodic_quickfix = 1
     let g:clang_complete_macros = 1
-    "let g:clang_use_library = 1
+    let g:clang_use_library = 1
+    autocmd FileType cpp let g:clang_user_options = '-std=c++11'
+    autocmd FileType c let g:clang_user_options = ''
     autocmd FileType c,cpp noremap <buffer> <F7> <ESC>:call g:ClangUpdateQuickFix()<CR>
     autocmd FileType c,cpp noremap <buffer> <F9> <ESc>:call g:dotClang()<CR>
-augroup END
-""""""""""""""""""""""""""""""""""""""
-" END --clang
-""""""""""""""""""""""""""""""""""""""
+augroup End
+
+" clang-auto-complete
+"===========================================================================
 
 
-""""""""""""""""""""""""""""""""""""""
+"===========================================================================
 " pysmelll
-""""""""""""""""""""""""""""""""""""""
+
 autocmd FileType python set omnifunc=pysmell#Complete
 "log: 用了pathogen, 之后pysmell失效了，看了一下报错，
 "pysmell#Complete似乎无法加载自己插件里python的包(不是这个原因)
 "原因找到了,github上的版本更加新，原来模块中缺少很多函数
-""""""""""""""""""""""""""""""""""""""
-" END -- pysmell.
-""""""""""""""""""""""""""""""""""""""
+
+" pysmell.
+"===========================================================================
 
 
-""""""""""""""""""""""""""""""""""""""
+"===========================================================================
 " vimwiki
-""""""""""""""""""""""""""""""""""""""
-augroup vimwiki_config
+
+augroup Vimwiki_Config
     autocmd FileType vimwiki noremap <buffer> <F6> <ESC>:VimwikiAll2HTML<CR>
     let g:vimwiki_list = [{'path': '$HOME/Documents/docs/wiki',  
                 \ 'path_html': '$HOME/Documents/docs/wiki/',
@@ -235,37 +236,37 @@ augroup vimwiki_config
                 \ 'template_default': 'def_template',
                 \ 'template_ext': '.tpl',
                 \ 'diary_link_count': 5}]
-augroup END
-""""""""""""""""""""""""""""""""""""""
-" END --  vimwiki
-""""""""""""""""""""""""""""""""""""""
+augroup End
+
+" vimwiki
+"===========================================================================
 
 
 
-""""""""""""""""""""""""""""""""""""""
+"===========================================================================
 " NERDTree 
-""""""""""""""""""""""""""""""""""""""
+
 noremap <F2> :NERDTreeToggle<cr>
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
-""""""""""""""""""""""""""""""""""""""
-" END -- NERDTree
-""""""""""""""""""""""""""""""""""""""
+
+" NERDTree
+"===========================================================================
 
 
 
-""""""""""""""""""""""""""""""""""""""
+"===========================================================================
 " EasyMotion 
-""""""""""""""""""""""""""""""""""""""
+
 let g:EasyMotion_leader_key = '<leader>'
 "原来的是<leader><leader>, \\w刚好与vimwiki的冲突
-""""""""""""""""""""""""""""""""""""""
-" END -- EasyMotion
-""""""""""""""""""""""""""""""""""""""
+
+" EasyMotion
+"===========================================================================
 
 
-""""""""""""""""""""""""""""""""""""""
+"===========================================================================
 " vim-latex 
-""""""""""""""""""""""""""""""""""""""
+
 " REQUIRED. This makes vim invoke Latex-Suite when you open a tex file.
 filetype plugin on
 
@@ -285,46 +286,46 @@ filetype indent on
 " 'plaintex' instead of 'tex', which results in vim-latex not being loaded.
 " The following changes the default filetype back to 'tex':
 let g:tex_flavor='latex'
-""""""""""""""""""""""""""""""""""""""
-" END -- vim-latex
-""""""""""""""""""""""""""""""""""""""
 
-""""""""""""""""""""""""""""""""""""""
+" vim-latex
+"===========================================================================
+
+"===========================================================================
 " Taglist 
-""""""""""""""""""""""""""""""""""""""
+
 let Tlist_Show_One_File=1 "不同时显示多个文件的tag，只显示当前文件的
 let Tlist_Exit_OnlyWindow=1  "如果taglist窗口是最后一个窗口，则退出vim
 let Tlist_Use_Right_Window=1  "在右侧窗口中显示taglist窗口
-""""""""""""""""""""""""""""""""""""""
-" END -- Taglist
-""""""""""""""""""""""""""""""""""""""
 
-""""""""""""""""""""""""""""""""""""""
+" Taglist
+"===========================================================================
+
+"===========================================================================
 " FuzzyFinder 
-""""""""""""""""""""""""""""""""""""""
+
 noremap 'b :FufBuffer<CR>
 noremap 'f :FufFile<CR>
-""""""""""""""""""""""""""""""""""""""
-" END -- FuzzyFinder
-""""""""""""""""""""""""""""""""""""""
 
-""""""""""""""""""""""""""""""""""""""
+" FuzzyFinder
+"===========================================================================
+
+"===========================================================================
 " LuaInspect
-""""""""""""""""""""""""""""""""""""""
-let g:lua_inspect_warnings=0 "不即时提示错误
-""""""""""""""""""""""""""""""""""""""
-" END -- LuaInspect
-""""""""""""""""""""""""""""""""""""""
 
-""""""""""""""""""""""""""""""""""""""
+let g:lua_inspect_warnings=0 "不即时提示错误
+
+" LuaInspect
+"===========================================================================
+
+"===========================================================================
 " Golang
-""""""""""""""""""""""""""""""""""""""
+
 "echo rtp
 "filetype plugin indent on
 "syntax on
-""""""""""""""""""""""""""""""""""""""
-" END -- Golang
-""""""""""""""""""""""""""""""""""""""
+" Golang
+
+"===========================================================================
 
 "Plugins End
 "===========================================================================
