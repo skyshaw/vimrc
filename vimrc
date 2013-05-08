@@ -74,12 +74,12 @@ augroup C_Cpp_Config
     "autocmd FileType c,cpp inoremap { {}<ESC>i<CR><ESC>O
     "autocmd FileType c,cpp inoremap {} {}<ESC>i<CR><ESC>O
     "autocmd FileType c,cpp inoremap cm /*  */<ESC>hhi
-    autocmd FileType c,cpp inoremap { {}<left>
-    autocmd FileType c,cpp inoremap {} {}<left>
-    autocmd FileType c,cpp inoremap ( ()<left>
-    autocmd FileType c,cpp inoremap () ()<left>
-    autocmd FileType cpp   nnoremap <buffer> <localleader>c I//
-    autocmd FileType c,cpp noremap  <F8> <ESC>:call g:hguard()<CR>
+    "autocmd FileType c,cpp inoremap { {}<left>
+    "autocmd FileType c,cpp inoremap {} {}<left>
+    "autocmd FileType c,cpp inoremap ( ()<left>
+    "autocmd FileType c,cpp inoremap () ()<left>
+    "autocmd FileType cpp   nnoremap <buffer> <localleader>c I//
+    "autocmd FileType c,cpp noremap  <F8> <ESC>:call g:hguard()<CR>
     autocmd FileType c setlocal makeprg=gcc\ %
     autocmd FileType cpp setlocal makeprg=g++\ %
 augroup End
