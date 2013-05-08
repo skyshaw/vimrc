@@ -203,7 +203,7 @@ augroup C_Cpp_Config
     let g:clang_periodic_quickfix = 1
     let g:clang_complete_macros = 1
     let g:clang_use_library = 1
-    autocmd FileType cpp let g:clang_user_options = '-std=c++11'
+    autocmd FileType cpp let g:clang_user_options = '-std=c++11 -Wall -Wextra -Werror -Wconversion -Wshadow'
     autocmd FileType c let g:clang_user_options = ''
     autocmd FileType c,cpp noremap <buffer> <F7> <ESC>:call g:ClangUpdateQuickFix()<CR>
     autocmd FileType c,cpp noremap <buffer> <F9> <ESc>:call g:dotClang()<CR>
